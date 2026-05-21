@@ -18,11 +18,11 @@ export const processHealthCSVFromDrive = onSchedule({ schedule: "30 11,23 * * *"
 
     // 2. Data dinàmica per buscar els fitxers d'avui (YYYY.MM.DD)
     const todayMadrid = new Date().toLocaleDateString("en-CA", { timeZone: "Europe/Madrid" }); // Format: YYYY-MM-DD
-  const dateStr = todayMadrid.replace(/-/g, "."); // Format: YYYY.MM.DD
-  // Compute yesterday in the same time zone
-  const yesterday = new Date(new Date().setDate(new Date().getDate() - 1));
-  const yesterdayMadrid = yesterday.toLocaleDateString("en-CA", { timeZone: "Europe/Madrid" });
-  const yesterdayStr = yesterdayMadrid.replace(/-/g, "."); // Format: YYYY.MM.DD
+    const dateStr = todayMadrid.replace(/-/g, "."); // Format: YYYY.MM.DD
+    // Compute yesterday in the same time zone
+    const yesterday = new Date(new Date().setDate(new Date().getDate() - 1));
+    const yesterdayMadrid = yesterday.toLocaleDateString("en-CA", { timeZone: "Europe/Madrid" });
+    const yesterdayStr = yesterdayMadrid.replace(/-/g, "."); // Format: YYYY.MM.DD
     console.log('Computed dateStr:', dateStr);
 
     // 3. Cerca de TOTS els fitxers CSV d'avui en una sola petició
@@ -34,22 +34,40 @@ export const processHealthCSVFromDrive = onSchedule({ schedule: "30 11,23 * * *"
     console.log('Raw fileSearch response:', fileSearch);
 
     const files = fileSearch.data.files;
-    console.log('Search result files:', files?.map(f=>f?.name));
+    console.log('Search result files:', files?.map(f => f?.name));
     if (!files || files.length === 0) {
       console.log(`No CSV files found for date ${dateStr}.`);
       return;
     }
 
-    // Estructura on consolidarem les dades de tots els fitxers d'avui
-    const todayData: Record<string, any> = {
-      lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
-      date: todayMadrid
+    const initDayData = (dateKey: string) => {
+      if (!dailyDataMap[dateKey]) {
+        dailyDataMap[dateKey] = {
+          lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
+          date: dateKey,
+        };
+      }
     };
 
-    let totalSteps = 0;
-    let hrSum = 0;
-    let hrCount = 0;
-    const activities: any[] = [];
+    // Helper to get the target date key for a file based on its name
+    const getDateKeyForFile = (fileName: string): string => {
+      if (fileName.includes(yesterdayStr)) return yesterdayMadrid;
+      return todayMadrid; // default to today
+    };
+
+    // Map to hold aggregated data per date (today and yesterday)
+    const dailyDataMap: {
+      [date: string]: {
+        averageHeartRate?: number;
+        lastUpdated: FirebaseFirestore.FieldValue;
+        date: string;
+        weight?: number;
+        steps?: number;
+        hrSum?: number;
+        hrCount?: number;
+        activities?: any[];
+      }
+    } = {};
 
     // 4. Bucle pels fitxers i parseig específic segons el nom
     for (const file of files) {
@@ -65,14 +83,14 @@ export const processHealthCSVFromDrive = onSchedule({ schedule: "30 11,23 * * *"
         fileId: file.id,
         alt: "media",
       });
-      
+
       const csvRawText = fileResponse.data as string;
       let records: Record<string, string>[] = [];
       try {
         records = parse(csvRawText, {
-          columns: true, 
+          columns: true,
           skip_empty_lines: true,
-          delimiter: ',' 
+          delimiter: ','
         }) as Record<string, string>[];
       } catch (e) {
         console.error('CSV parse error for file', file.name, e);
@@ -82,58 +100,62 @@ export const processHealthCSVFromDrive = onSchedule({ schedule: "30 11,23 * * *"
       if (records.length === 0) continue;
 
       const name = file.name.toUpperCase();
+      const dateKey = getDateKeyForFile(file.name);
+      initDayData(dateKey);
 
       if (name.includes("PESO")) {
         // Només ens cal el pes de la primera fila
         const pesoRaw = records[0]["Peso"];
-        if (pesoRaw) todayData.weight = parseFloat(pesoRaw);
-      } 
-      else if (name.includes("FRECUENCIA")) {
-        // Calculem la freqüència cardíaca mitjana diària
+        if (pesoRaw) dailyDataMap[dateKey].weight = parseFloat(pesoRaw);
+      } else if (name.includes("FRECUENCIA")) {
+        // Calculem la freqüència cardíaca mitjana diària per aquest dia
         for (const row of records) {
           const hrRaw = row["Frecuencia cardiaca"];
           if (hrRaw) {
-            hrSum += parseFloat(hrRaw);
-            hrCount++;
+            dailyDataMap[dateKey].hrSum = (dailyDataMap[dateKey].hrSum || 0) + parseFloat(hrRaw);
+            dailyDataMap[dateKey].hrCount = (dailyDataMap[dateKey].hrCount || 0) + 1;
           }
         }
-      } 
-      else if (name.includes("PASOS")) {
-        // Sumem tots els passos parcials
+      } else if (name.includes("PASOS")) {
+        // Sumem tots els passos parcials per aquest dia
         for (const row of records) {
           const stepsRaw = row["Pasos"];
           if (stepsRaw) {
-            totalSteps += parseInt(stepsRaw, 10);
+            dailyDataMap[dateKey].steps = (dailyDataMap[dateKey].steps || 0) + parseInt(stepsRaw, 10);
           }
         }
-      } 
-      else if (name.includes("RUNNING") || name.includes("WALKING") || name.includes("ACTIVIDADES")) {
-        // Guardem l'activitat com a objecte a l'array
+      } else if (name.includes("RUNNING") || name.includes("WALKING") || name.includes("ACTIVIDADES")) {
+        // Guardem l'activitat com a objecte a l'array per aquest dia
         for (const row of records) {
           const activityType = row["Tipo de actividad"] || "UNKNOWN";
           const distance = row["Distancia (km)"];
           const activeTime = row["Tiempo activo"];
           const time = row["Hora"];
-          activities.push({
+          const activity = {
             type: activityType,
             distanceKm: distance ? parseFloat(distance) : 0,
             activeTimeSecs: activeTime ? parseInt(activeTime, 10) : 0,
             time: time || ""
-          });
+          };
+          dailyDataMap[dateKey].activities = (dailyDataMap[dateKey].activities || []).concat(activity);
         }
       }
     }
 
-    // Consolidació final d'agregats
-    if (totalSteps > 0) todayData.steps = totalSteps;
-    if (hrCount > 0) todayData.averageHeartRate = Math.round(hrSum / hrCount);
-    if (activities.length > 0) todayData.activities = activities;
+    // Consolidació final per cada dia
+    for (const [dateKey, data] of Object.entries(dailyDataMap)) {
+      // Compute average heart rate if data exists
+      if (data.hrCount && data.hrCount > 0) {
+        data.averageHeartRate = Math.round((data.hrSum || 0) / data.hrCount);
+      }
+      // Remove helper fields before persisting
+      const { hrSum, hrCount, ...persistData } = data;
+      const docRef = db.collection("health_metrics").doc(dateKey);
+      await docRef.set(persistData, { merge: true });
+      console.log('Written data for date', dateKey);
+    }
 
-    // 5. Upsert (Merge) natiu a Firestore
-    const docRef = db.collection("health_metrics").doc(todayMadrid);
-    await docRef.set(todayData, { merge: true });
-
-    console.log("Function executed successfully", { parsedFiles: files.length, date: todayMadrid, data: todayData });
+    console.log("Function executed successfully", { parsedFiles: files.length, dates: Object.keys(dailyDataMap) });
 
   } catch (error) {
     console.error("Error processing CSV ETL:", error);
