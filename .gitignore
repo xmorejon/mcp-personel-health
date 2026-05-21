@@ -1,0 +1,8 @@
+# Cloud Function ignores
+google-backend/functions/node_modules/
+google-backend/functions/lib/
+google-backend/.firebaserc/
+
+# Local MCP ignores
+google-backend/functions/.env
+local-mcp-server/service-account.json
