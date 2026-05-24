@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+gunicorn
+google-auth
+google-cloud-firestore
+google-genai
+pydantic
+pytest
+pytest-asyncio
+pytest-cov
+httpx
+pytest-mock
+

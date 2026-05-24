@@ -9,3 +9,6 @@ local-mcp-server/service-account.json
 
 # Ignore all local compiled binaries
 bin/
+
+# Health MCP Agent credentials
+health-agent-credentials.json

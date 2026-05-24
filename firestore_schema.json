@@ -1,0 +1,53 @@
+{
+  "health_metrics": {
+    "fields": {
+      "date": {
+        "type": "string",
+        "sample": "2026-05-20"
+      },
+      "averageHeartRate": {
+        "type": "number",
+        "sample": 72
+      },
+      "steps": {
+        "type": "number",
+        "sample": 3969
+      },
+      "lastUpdated": {
+        "type": "timestamp",
+        "sample": {
+          "_seconds": 1779399009,
+          "_nanoseconds": 850000000
+        }
+      },
+      "weight": {
+        "type": "number",
+        "sample": 86.2
+      },
+      "activities": {
+        "type": "array",
+        "sample": [
+          {
+            "activeTimeSecs": 903,
+            "distanceKm": 1.1935201,
+            "time": "18:11:22",
+            "type": "WALKING"
+          },
+          {
+            "type": "WALKING",
+            "time": "15:02:43",
+            "distanceKm": 0.94916,
+            "activeTimeSecs": 670
+          },
+          {
+            "activeTimeSecs": 1702,
+            "distanceKm": 5.029294,
+            "time": "08:04:55",
+            "type": "RUNNING"
+          }
+        ]
+      }
+    },
+    "subcollections": {}
+  }
+}
