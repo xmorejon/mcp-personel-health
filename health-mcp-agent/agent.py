@@ -1,32 +1,33 @@
 from google.auth import default
-
-# Assuming google-genai provides Agent and McpToolset
-try:
-    from google.genai.agents import Agent, McpToolset
-except ImportError:
-    # Fallback generic imports
-    from google_adk import Agent, McpToolset
+from google.adk.agents import Agent
+from google.adk.tools.mcp_tool.mcp_toolset import McpToolset
+from google.adk.tools.mcp_tool.mcp_session_manager import SseServerParams
 
 from config import PROJECT_ID, MODEL_NAME, FIRESTORE_MCP_ENDPOINT
 from prompts import SYSTEM_PROMPT
 
 def get_agent() -> Agent:
     """Initialize and return the ADK Agent."""
-    credentials, project_id = default(scopes=["https://www.googleapis.com/auth/cloud-platform"])
-    
-    # Configure the MCP Toolset pointing to the Remote MCP endpoint
-    # Tool filter enforces read-only operations for health data safety
-    mcp_toolset = McpToolset(
-        endpoint=FIRESTORE_MCP_ENDPOINT,
-        credentials=credentials,
-        tool_filter=["get_document", "list_documents", "list_collections"]
+    credentials, project_id = default(
+        scopes=["https://www.googleapis.com/auth/cloud-platform"]
     )
-    
+
+    # Configure MCP Toolset pointing to Cloud Run MCP endpoint
+    mcp_toolset = McpToolset(
+        connection_params=SseServerParams(
+            url=FIRESTORE_MCP_ENDPOINT,
+            headers={
+                "Authorization": f"Bearer {credentials.token}"
+            }
+        )
+    )
+
     # Initialize the Agent
     agent = Agent(
         model=MODEL_NAME,
-        system_prompt=SYSTEM_PROMPT,
+        name="health_agent",
+        instruction=SYSTEM_PROMPT,
         tools=[mcp_toolset]
     )
-    
+
     return agent

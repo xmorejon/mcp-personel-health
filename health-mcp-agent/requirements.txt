@@ -3,11 +3,7 @@ uvicorn
 gunicorn
 google-auth
 google-cloud-firestore
-google-genai
+google-adk
 pydantic
-pytest
-pytest-asyncio
-pytest-cov
 httpx
-pytest-mock
-
+mcp
