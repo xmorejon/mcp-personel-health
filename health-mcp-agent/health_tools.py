@@ -1,4 +1,5 @@
 import json
+# pyrefly: ignore [missing-import]
 from google.cloud import firestore
 from mcp.server.fastmcp import FastMCP
 from config import PROJECT_ID
@@ -7,7 +8,12 @@ from config import PROJECT_ID
 db = firestore.Client(project=PROJECT_ID)
 
 # Initialize FastMCP server
-mcp = FastMCP("HealthServer", stateless_http=True)
+mcp = FastMCP(
+    "HealthServer",
+    stateless_http=True,
+    host="0.0.0.0",
+    json_response=True
+)
 
 def _get_latest_health_doc():
     """Helper to get the most recent health document."""

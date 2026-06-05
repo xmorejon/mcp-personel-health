@@ -1,20 +1,26 @@
+from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException, Security, Depends
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from pydantic import BaseModel
 import httpx
-import asyncio
 from google.adk.runners import Runner
 from google.adk.sessions import InMemorySessionService
 from google.genai.types import Content, Part
 from agent import get_agent
 from health_tools import mcp
 
-app = FastAPI(title="Health MCP Agent")
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    async with mcp.session_manager.run():
+        yield
+
+app = FastAPI(title="Health MCP Agent", lifespan=lifespan)
 app.mount("/mcp", mcp.streamable_http_app())
+
 security = HTTPBearer()
 
 USER_MAPPING = {
-    "xaviermorejonbalta@gmail.com": "user_001"
+    "<EMAIL_ADDRESS>": "user_001"
 }
 
 class QueryRequest(BaseModel):
@@ -57,6 +63,17 @@ async def verify_google_token(
 @app.get("/health")
 async def health_check():
     return {"status": "ok"}
+
+@app.get("/routes")
+async def list_routes():
+    result = []
+    for r in app.routes:
+        result.append({
+            "path": getattr(r, "path", str(r)),
+            "type": type(r).__name__,
+            "methods": list(getattr(r, "methods", None) or [])
+        })
+    return {"routes": result}
 
 @app.post("/ask", response_model=QueryResponse)
 async def handle_query(
