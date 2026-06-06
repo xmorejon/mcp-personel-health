@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthMate Chat</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <style>
+        :root {
+            --primary-blue: #0A84FF;
+            --bg-color: #f2f2f7;
+            --chat-bg: #ffffff;
+            --text-dark: #1c1c1e;
+            --text-light: #8e8e93;
+            --message-bot-bg: #e5e5ea;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            color: var(--text-dark);
+        }
+        
+        /* Header styles */
+        header {
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+        .header-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .user-info span {
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        .user-info img {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .sign-out-btn {
+            background: none;
+            border: 1px solid #d1d1d6;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #ff3b30;
+            transition: all 0.2s;
+        }
+        .sign-out-btn:hover {
+            background-color: #fff0f0;
+            border-color: #ff3b30;
+        }
+        
+        /* Main Container */
+        #login-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .login-card {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            max-width: 400px;
+            width: 100%;
+        }
+        .login-card h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .login-card p {
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+        #error-message {
+            color: #ff3b30;
+            margin-top: 15px;
+            font-weight: 500;
+            display: none;
+            padding: 10px;
+            background-color: #ffeaea;
+            border-radius: 8px;
+        }
+        
+        #chat-container {
+            display: none;
+            flex: 1;
+            flex-direction: column;
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+            background-color: var(--chat-bg);
+            box-shadow: 0 0 20px rgba(0,0,0,0.03);
+            position: relative;
+        }
+        
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        /* Message Bubbles */
+        .message-row {
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: 4px;
+            gap: 12px;
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .message-row.user {
+            justify-content: flex-end;
+        }
+        
+        .message-row.bot {
+            justify-content: flex-start;
+        }
+        
+        .avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        
+        .bot-avatar {
+            background-color: #f0f8ff;
+            border: 1px solid #e0f0ff;
+        }
+        
+        .bot-name {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 4px;
+            margin-left: 48px;
+            display: block;
+        }
+        
+        .message-bubble {
+            max-width: 75%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            word-wrap: break-word;
+        }
+        
+        .user .message-bubble {
+            background-color: var(--primary-blue);
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+        
+        .bot .message-bubble {
+            background-color: var(--message-bot-bg);
+            color: var(--text-dark);
+            border-bottom-left-radius: 4px;
+        }
+        
+        /* Input Area */
+        .chat-input-area {
+            padding: 16px 20px;
+            background-color: white;
+            border-top: 1px solid #e5e5ea;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        
+        .chat-input-area input {
+            flex: 1;
+            padding: 14px 20px;
+            border: 1px solid #d1d1d6;
+            border-radius: 24px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.2s;
+            background-color: #fafafa;
+        }
+        
+        .chat-input-area input:focus {
+            border-color: var(--primary-blue);
+            background-color: white;
+            box-shadow: 0 0 0 3px rgba(10, 132, 255, 0.1);
+        }
+        
+        .chat-input-area button {
+            background-color: var(--primary-blue);
+            color: white;
+            border: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.2s;
+            flex-shrink: 0;
+            box-shadow: 0 2px 6px rgba(10, 132, 255, 0.3);
+        }
+        
+        .chat-input-area button:hover {
+            background-color: #0070ea;
+            transform: scale(1.05);
+        }
+        
+        .chat-input-area button:disabled {
+            background-color: #c7c7cc;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+        }
+        
+        /* Loading Animation */
+        .typing-indicator {
+            padding: 12px 16px;
+            background-color: var(--message-bot-bg);
+            border-radius: 18px;
+            border-bottom-left-radius: 4px;
+            width: fit-content;
+        }
+        
+        .dot {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #8e8e93;
+            animation: wave 1.3s linear infinite;
+            margin-right: 4px;
+        }
+        
+        .dot:nth-child(2) { animation-delay: -1.1s; }
+        .dot:nth-child(3) { animation-delay: -0.9s; margin-right: 0; }
+        
+        @keyframes wave {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-5px); }
+        }
+        
+        .markdown-content p {
+            margin: 0 0 10px 0;
+        }
+        .markdown-content p:last-child {
+            margin: 0;
+        }
+        
+        /* Media Queries for Mobile */
+        @media (max-width: 600px) {
+            .message-bubble {
+                max-width: 85%;
+            }
+            .header-title span {
+                display: none;
+            }
+            .user-info span {
+                display: none;
+            }
+            .login-card {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-title">🏥 <span>HealthMate</span></div>
+        <div id="user-profile" class="user-info" style="display: none;">
+            <span id="user-name"></span>
+            <img id="user-photo" src="" alt="Profile">
+            <button class="sign-out-btn" onclick="signOut()">Sign Out</button>
+        </div>
+    </header>
+
+    <div id="login-container">
+        <div class="login-card">
+            <h2>Welcome to HealthMate</h2>
+            <p>Please sign in to access your private health assistant.</p>
+            <div style="display: flex; justify-content: center;">
+                <div id="g_id_onload"
+                     data-client_id="__GOOGLE_CLIENT_ID__"
+                     data-context="signin"
+                     data-ux_mode="popup"
+                     data-callback="handleCredentialResponse"
+                     data-auto_prompt="false">
+                </div>
+                <div class="g_id_signin"
+                     data-type="standard"
+                     data-shape="rectangular"
+                     data-theme="outline"
+                     data-text="signin_with"
+                     data-size="large"
+                     data-logo_alignment="left">
+                </div>
+            </div>
+            <div id="error-message"></div>
+        </div>
+    </div>
+
+    <div id="chat-container">
+        <div class="chat-messages" id="chat-messages">
+            <!-- Welcome message -->
+            <div>
+                <span class="bot-name">HealthMate 🏥</span>
+                <div class="message-row bot">
+                    <div class="avatar bot-avatar">🏥</div>
+                    <div class="message-bubble">
+                        Hello! I'm HealthMate, your private health assistant. How can I help you today?
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Typing indicator -->
+        <div id="typing-container" style="display: none;">
+            <span class="bot-name">HealthMate 🏥</span>
+            <div class="message-row bot">
+                <div class="avatar bot-avatar">🏥</div>
+                <div class="typing-indicator" id="typing-indicator">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-input-area">
+            <input type="text" id="message-input" placeholder="Type your message..." autocomplete="off">
+            <button id="send-button" onclick="sendMessage()">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const ALLOWED_EMAIL = 'xaviermorejonbalta@gmail.com';
+        let accessToken = null;
+
+        // Parse JWT token to get user info
+        function parseJwt(token) {
+            try {
+                const base64Url = token.split('.')[1];
+                const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+                const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+                    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+                }).join(''));
+                return JSON.parse(jsonPayload);
+            } catch (e) {
+                return null;
+            }
+        }
+
+        function handleCredentialResponse(response) {
+            const payload = parseJwt(response.credential);
+            
+            if (payload && payload.email === ALLOWED_EMAIL) {
+                // Login successful
+                accessToken = response.credential;
+                
+                // Update UI
+                document.getElementById('login-container').style.display = 'none';
+                document.getElementById('chat-container').style.display = 'flex';
+                document.getElementById('user-profile').style.display = 'flex';
+                
+                document.getElementById('user-name').textContent = payload.name;
+                document.getElementById('user-photo').src = payload.picture;
+                document.getElementById('error-message').style.display = 'none';
+            } else {
+                // Access denied
+                const errorDiv = document.getElementById('error-message');
+                errorDiv.textContent = 'Access denied. This is a private health assistant.';
+                errorDiv.style.display = 'block';
+                
+                // Auto sign out unauthorized user
+                google.accounts.id.revoke(payload.email, done => {
+                    console.log('Revoked access for unauthorized user');
+                });
+            }
+        }
+
+        function signOut() {
+            accessToken = null;
+            document.getElementById('login-container').style.display = 'flex';
+            document.getElementById('chat-container').style.display = 'none';
+            document.getElementById('user-profile').style.display = 'none';
+            
+            // Re-initialize to allow selecting different account
+            google.accounts.id.disableAutoSelect();
+        }
+
+        const messageInput = document.getElementById('message-input');
+        const sendButton = document.getElementById('send-button');
+        const chatMessages = document.getElementById('chat-messages');
+        const typingContainer = document.getElementById('typing-container');
+
+        messageInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        function appendUserMessage(text) {
+            const row = document.createElement('div');
+            row.className = 'message-row user';
+            
+            const bubble = document.createElement('div');
+            bubble.className = 'message-bubble';
+            bubble.textContent = text;
+            
+            row.appendChild(bubble);
+            chatMessages.appendChild(row);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function appendBotMessage(text) {
+            const wrapper = document.createElement('div');
+            
+            const nameLabel = document.createElement('span');
+            nameLabel.className = 'bot-name';
+            nameLabel.textContent = 'HealthMate 🏥';
+            
+            const row = document.createElement('div');
+            row.className = 'message-row bot';
+            
+            const avatar = document.createElement('div');
+            avatar.className = 'avatar bot-avatar';
+            avatar.textContent = '🏥';
+            
+            const bubble = document.createElement('div');
+            bubble.className = 'message-bubble markdown-content';
+            
+            // Simple markdown formatting (newlines to <br>)
+            const formattedText = text.replace(/\\n/g, '<br>').replace(/\n/g, '<br>');
+            bubble.innerHTML = formattedText;
+            
+            row.appendChild(avatar);
+            row.appendChild(bubble);
+            
+            wrapper.appendChild(nameLabel);
+            wrapper.appendChild(row);
+            
+            chatMessages.appendChild(wrapper);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        async function sendMessage() {
+            const text = messageInput.value.trim();
+            if (!text || !accessToken) return;
+
+            // UI updates for sending
+            messageInput.value = '';
+            messageInput.disabled = true;
+            sendButton.disabled = true;
+            appendUserMessage(text);
+            
+            // Show typing indicator
+            typingContainer.style.display = 'block';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            try {
+                const response = await fetch('/ask', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${accessToken}`
+                    },
+                    body: JSON.stringify({ query: text })
+                });
+
+                if (!response.ok) {
+                    if (response.status === 401) {
+                        signOut();
+                        alert('Session expired or access denied. Please sign in again.');
+                        throw new Error('Unauthorized');
+                    }
+                    throw new Error('Network response was not ok');
+                }
+
+                const data = await response.json();
+                typingContainer.style.display = 'none';
+                appendBotMessage(data.response);
+
+            } catch (error) {
+                console.error('Error:', error);
+                typingContainer.style.display = 'none';
+                appendBotMessage('Sorry, there was an error processing your request. Please try again.');
+            } finally {
+                messageInput.disabled = false;
+                sendButton.disabled = false;
+                messageInput.focus();
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+        }
+    </script>
+</body>
+</html>

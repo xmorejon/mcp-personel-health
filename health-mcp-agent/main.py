@@ -1,6 +1,8 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException, Security, Depends
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from fastapi.responses import HTMLResponse
+from config import GOOGLE_CLIENT_ID
 from pydantic import BaseModel
 import httpx
 from google.adk.runners import Runner
@@ -16,6 +18,12 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="Health MCP Agent", lifespan=lifespan)
 app.mount("/mcp", mcp.streamable_http_app())
+
+@app.get("/", response_class=HTMLResponse)
+async def chat_ui():
+    with open("static/index.html", "r", encoding="utf-8") as f:
+        html = f.read()
+    return HTMLResponse(content=html.replace("__GOOGLE_CLIENT_ID__", GOOGLE_CLIENT_ID))
 
 security = HTTPBearer()
 
