@@ -1,7 +1,7 @@
 from google.auth import default
 from google.adk.agents import Agent
 from google.adk.tools.mcp_tool.mcp_toolset import McpToolset
-from google.adk.tools.mcp_tool.mcp_session_manager import SseServerParams
+from google.adk.tools.mcp_tool.mcp_session_manager import StreamableHTTPServerParams
 
 from config import PROJECT_ID, MODEL_NAME, FIRESTORE_MCP_ENDPOINT
 from prompts import SYSTEM_PROMPT
@@ -14,7 +14,7 @@ def get_agent() -> Agent:
 
     # Configure MCP Toolset pointing to Cloud Run MCP endpoint
     mcp_toolset = McpToolset(
-        connection_params=SseServerParams(
+        connection_params=StreamableHTTPServerParams(
             url=FIRESTORE_MCP_ENDPOINT,
             headers={
                 "Authorization": f"Bearer {credentials.token}"

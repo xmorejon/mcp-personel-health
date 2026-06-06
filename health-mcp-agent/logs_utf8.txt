@@ -1,0 +1,721 @@
+﻿---
+errorGroups[0].id:                  CIKg9YShvbfGJQ
+insertId:                           6a2473600004906692415139
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:22:08.609474454Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+severity:                           ERROR
+textPayload:                        "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.12/site-packages/google/genai/_api_client.py\", line 2179, in aclose\n    await self._async_httpx_client.aclose()  # type: ignore[union-attr]\n          ^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'BaseApiClient' object has no attribute '_async_httpx_client'"
+timestamp:                          2026-06-06T19:22:08.299110Z
+---
+insertId:                           6a247360000490521e3ff0f7
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:22:08.609474454Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        future: <Task finished name='Task-25' coro=<BaseApiClient.aclose() done, defined at /usr/local/lib/python3.12/site-packages/google/genai/_api_client.py:2174> exception=AttributeError("'BaseApiClient' object has no attribute '_async_httpx_client'")>
+timestamp:                          2026-06-06T19:22:08.299090Z
+---
+insertId:                           6a24736000049036dd3bd1e4
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:22:08.609474454Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        Task exception was never retrieved
+timestamp:                          2026-06-06T19:22:08.299062Z
+---
+errorGroups[0].id:                  CPnGn56-x6KLZg
+insertId:                           6a2473600004806cf82c5060
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:22:08.609474454Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+severity:                           ERROR
+textPayload:                        "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.12/site-packages/opentelemetry/context/__init__.py\", line 155, in detach\n    _RUNTIME_CONTEXT.detach(token)\n  File \"/usr/local/lib/python3.12/site-packages/opentelemetry/context/contextvars_context.py\", line 53, in detach\n    self._current_context.reset(token)\nValueError: <Token var=<ContextVar name='current_context' default={} at 0x7fd28c9e1710> at 0x7fd28a831cc0> was created in a different Context"
+timestamp:                          2026-06-06T19:22:08.295020Z
+---
+insertId:                           6a2473600004805ff0157e00
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:22:08.609474454Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        During handling of the above exception, another exception occurred:
+timestamp:                          2026-06-06T19:22:08.295007Z
+---
+insertId:                           6a2473600004805b5dc7e031
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:22:08.609474454Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        GeneratorExit
+timestamp:                          2026-06-06T19:22:08.295003Z
+---
+errorGroups[0].id:                  CJ3lsdvWxrTb-QE
+insertId:                           6a2473600004805816f2f418
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:22:08.609474454Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+severity:                           ERROR
+textPayload:                        "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.12/site-packages/opentelemetry/trace/__init__.py\", line 619, in use_span\n    yield span\n  File \"/usr/local/lib/python3.12/site-packages/opentelemetry/trace/__init__.py\", line 519, in start_as_current_span\n    yield span\n  File \"/usr/local/lib/python3.12/site-packages/opentelemetry/trace/__init__.py\", line 454, in start_as_current_span\n    yield span\n  File \"/usr/local/lib/python3.12/site-packages/google/adk/runners.py\", line 592, in _run_node_async\n    yield event"
+timestamp:                          2026-06-06T19:22:08.295Z
+---
+insertId:                           6a24736000048034ccb1460c
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:22:08.609474454Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        Failed to detach context
+timestamp:                          2026-06-06T19:22:08.294964Z
+---
+insertId:                           6a247360000448c93c2e42c4
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:22:08.609474454Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        Root node health_agent was cancelled.
+timestamp:                          2026-06-06T19:22:08.280777Z
+---
+errorGroups[0].id:                  CNHd2uTTwPLGMw
+insertId:                           6a247360000441c6cf827aed
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:22:08.609474454Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+severity:                           ERROR
+textPayload:                        "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.12/site-packages/google/adk/workflow/_node_runner.py\", line 129, in run\n    await self._execute_node(ctx, node_input)\n  File \"/usr/local/lib/python3.12/site-packages/google/adk/workflow/_node_runner.py\", line 248, in _execute_node\n    await self._run_node_loop(ctx, node_input)\n  File \"/usr/local/lib/python3.12/site-packages/google/adk/workflow/_node_runner.py\", line 262, in _run_node_loop\n    async for event in agen:\n  File \"/usr/local/lib/python3.12/site-packages/google/adk/workflow/_base_node.py\", line 217, in run\n    async for item in agen:\n  File \"/usr/local/lib/python3.12/site-packages/google/adk/agents/llm_agent.py\", line 559, in _run_impl\n    async for event in agen:\n  File \"/usr/local/lib/python3.12/site-packages/google/adk/workflow/_llm_agent_wrapper.py\", line 380, in run_llm_agent_as_node\n    async for event in run_iter:\n  File \"/usr/local/lib/python3.12/site-packages/google/adk/agents/base_agent.py\", line 305, in run_async\n    async for event in agen:\n  File \"/usr/local/lib/python3.12/site-packages/google/adk/agents/llm_agent.py\", line 515, in _run_async_impl\n    async for event in agen:\n  File \"/usr/local/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py\", line 881, in run_async\n    async for event in agen:\n  File \"/usr/local/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py\", line 960, in _run_one_step_async\n    async for llm_response in agen:\n  File \"/usr/local/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py\", line 1351, in _call_llm_async\n    async for event in agen:\n  File \"/usr/local/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py\", line 1329, in _call_llm_with_tracing\n    async for llm_response in agen:\n  File \"/usr/local/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py\", line 1412, in _run_and_handle_error\n    async for response in agen:\n  File \"/usr/local/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py\", line 410, in _run_and_handle_error\n    raise model_error\n  File \"/usr/local/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py\", line 387, in _run_and_handle_error\n    async for llm_response in agen:\n  File \"/usr/local/lib/python3.12/site-packages/google/adk/models/google_llm.py\", line 188, in generate_content_async\n    await self._preprocess_request(llm_request)\n  File \"/usr/local/lib/python3.12/site-packages/google/adk/models/google_llm.py\", line 484, in _preprocess_request\n    if self._api_backend == GoogleLLMVariant.GEMINI_API:\n       ^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/functools.py\", line 998, in __get__\n    val = self.func(instance)\n          ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/google/adk/models/google_llm.py\", line 356, in _api_backend\n    if self.api_client.vertexai\n       ^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/functools.py\", line 998, in __get__\n    val = self.func(instance)\n          ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/google/adk/models/google_llm.py\", line 350, in api_client\n    return Client(**kwargs)\n           ^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/google/genai/client.py\", line 458, in __init__\n    self._api_client = self._get_api_client(\n                       ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/google/genai/client.py\", line 506, in _get_api_client\n    return BaseApiClient(\n           ^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/site-packages/google/genai/_api_client.py\", line 783, in __init__\n    raise ValueError(\nValueError: No API key was provided. Please pass a valid API key. Learn how to create an API key at https://ai.google.dev/gemini-api/docs/api-key."
+timestamp:                          2026-06-06T19:22:08.278982Z
+---
+insertId:                           6a2473600004414f155f7603
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:22:08.609474454Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        Node execution failed with exception
+timestamp:                          2026-06-06T19:22:08.278863Z
+---
+insertId:                           6a24736000038fe94c18d12f
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:22:08.275265850Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        "  declaration = tool._get_declaration()"
+timestamp:                          2026-06-06T19:22:08.233449Z
+---
+insertId:                           6a24736000038fde29d10dee
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:22:08.275265850Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        /usr/local/lib/python3.12/site-packages/google/adk/models/llm_request.py:256: UserWarning: [EXPERIMENTAL] feature FeatureName.JSON_SCHEMA_FOR_FUNC_DECL is enabled.
+timestamp:                          2026-06-06T19:22:08.233438Z
+---
+insertId:                           6a24736000037d8696b674d5
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:22:08.275265850Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        "  check_feature_enabled()"
+timestamp:                          2026-06-06T19:22:08.228742Z
+---
+insertId:                           6a24736000037d7c298eee3f
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:22:08.275265850Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        /usr/local/lib/python3.12/site-packages/google/adk/features/_feature_decorator.py:72: UserWarning: [EXPERIMENTAL] feature FeatureName.BASE_AUTHENTICATED_TOOL is enabled.
+timestamp:                          2026-06-06T19:22:08.228732Z
+---
+insertId:                           6a24736000037809c2342a66
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:22:08.275265850Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        HTTP Request: POST https://health-mcp-agent-600671868745.europe-west3.run.app/mcp/mcp "HTTP/1.1 200 OK"
+timestamp:                          2026-06-06T19:22:08.227337Z
+---
+insertId:                           6a247360000366d70253ef81
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:22:08.275265850Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        Terminating session: None
+timestamp:                          2026-06-06T19:22:08.222935Z
+---
+insertId:                           6a247360000361533869349f
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:22:08.275265850Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        Processing request of type ListToolsRequest
+timestamp:                          2026-06-06T19:22:08.221523Z
+---
+httpRequest.latency:                0.006938349s
+httpRequest.protocol:               HTTP/1.1
+httpRequest.remoteIp:               2600:1900:0:3403::601
+httpRequest.requestMethod:          POST
+httpRequest.requestSize:            501
+httpRequest.requestUrl:             https://health-mcp-agent-600671868745.europe-west3.run.app/mcp/mcp
+httpRequest.responseSize:           1162
+httpRequest.serverIp:               2600:1900:4241:200::
+httpRequest.status:                 200
+httpRequest.userAgent:              python-httpx/0.28.1
+insertId:                           6a247360000368356cd7baf0
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Frequests
+receiveTimestamp:                   2026-06-06T19:22:08.440689115Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+severity:                           INFO
+spanId:                             392f85ec54d2528c
+timestamp:                          2026-06-06T19:22:08.214877Z
+trace:                              projects/mcp-personel-health/traces/374f346f47803827a5b15a3378ba4da1
+---
+insertId:                           6a2473600002e36abe6539af
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:22:08.275265850Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        HTTP Request: POST https://health-mcp-agent-600671868745.europe-west3.run.app/mcp/mcp "HTTP/1.1 202 Accepted"
+timestamp:                          2026-06-06T19:22:08.189290Z
+---
+insertId:                           6a2473600002d5ef3baf3887
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:22:08.275265850Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        Terminating session: None
+timestamp:                          2026-06-06T19:22:08.185839Z
+---
+httpRequest.latency:                0.068836245s
+httpRequest.protocol:               HTTP/1.1
+httpRequest.remoteIp:               2600:1900:0:3403::601
+httpRequest.requestMethod:          POST
+httpRequest.requestSize:            510
+httpRequest.requestUrl:             https://health-mcp-agent-600671868745.europe-west3.run.app/mcp/mcp
+httpRequest.responseSize:           99
+httpRequest.serverIp:               2600:1900:4242:200::
+httpRequest.status:                 202
+httpRequest.userAgent:              python-httpx/0.28.1
+insertId:                           6a2473600002d4ed251d8273
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Frequests
+receiveTimestamp:                   2026-06-06T19:22:08.440689115Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+severity:                           INFO
+spanId:                             f759642f60ef5c58
+timestamp:                          2026-06-06T19:22:08.115321Z
+trace:                              projects/mcp-personel-health/traces/90e04cc68527b325bb457b5a2f6c9e72
+---
+insertId:                           6a2473600001add20c0929c1
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:22:08.275265850Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        Negotiated protocol version: 2025-11-25
+timestamp:                          2026-06-06T19:22:08.110034Z
+---
+insertId:                           6a2473600001a746f0730bbd
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:22:08.275265850Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        HTTP Request: POST https://health-mcp-agent-600671868745.europe-west3.run.app/mcp/mcp "HTTP/1.1 200 OK"
+timestamp:                          2026-06-06T19:22:08.108358Z
+---
+insertId:                           6a2473600001959338ee5aee
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:22:08.275265850Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        Terminating session: None
+timestamp:                          2026-06-06T19:22:08.103827Z
+---
+httpRequest.latency:                0.081696786s
+httpRequest.protocol:               HTTP/1.1
+httpRequest.remoteIp:               2600:1900:0:3403::601
+httpRequest.requestMethod:          POST
+httpRequest.requestSize:            575
+httpRequest.requestUrl:             https://health-mcp-agent-600671868745.europe-west3.run.app/mcp/mcp
+httpRequest.responseSize:           372
+httpRequest.serverIp:               2600:1900:4242:200::
+httpRequest.status:                 200
+httpRequest.userAgent:              python-httpx/0.28.1
+insertId:                           6a2473600001978d845b9e40
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Frequests
+receiveTimestamp:                   2026-06-06T19:22:08.107014015Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+severity:                           INFO
+spanId:                             a015d08d24c84605
+timestamp:                          2026-06-06T19:22:08.021248Z
+trace:                              projects/mcp-personel-health/traces/17b1d003c8c60657bb457b5a2f6c9935
+---
+insertId:                           6a24735f000ef904e84edb2d
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:22:08.275265850Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        "  session = await self._mcp_session_manager.create_session("
+timestamp:                          2026-06-06T19:22:07.981252Z
+---
+insertId:                           6a24735f000ef8f4fdd11cbb
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:22:08.275265850Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        /usr/local/lib/python3.12/site-packages/google/adk/tools/mcp_tool/mcp_toolset.py:314: UserWarning: [EXPERIMENTAL] feature FeatureName._MCP_GRACEFUL_ERROR_HANDLING is enabled.
+timestamp:                          2026-06-06T19:22:07.981236Z
+---
+insertId:                           6a24735f000e50c209ea19b6
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:22:07.943593659Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        HTTP Request: GET https://oauth2.googleapis.com/tokeninfo?id_token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjdiMDIxNjcxZWRlOTBlZTVhMzc1YzAyMmE1MjNkNDkwMTgxYTJjOWQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiI2MDA2NzE4Njg3NDUtZXNwNGM3YzN0bmFnYmJ0OXB1anQ4aWMyaThtYXQxNTAuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI2MDA2NzE4Njg3NDUtZXNwNGM3YzN0bmFnYmJ0OXB1anQ4aWMyaThtYXQxNTAuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDY4ODM5OTAyNjQzMzM1OTg5NjAiLCJlbWFpbCI6Inhhdmllcm1vcmVqb25iYWx0YUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmJmIjoxNzgwNzczNDIwLCJuYW1lIjoiWGF2aWVyIE0iLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jTEpVd1FJS0VUdmVwVGpLdFhocE5oTTZ0MjgtaU9QckhsNThLWnpiNlJPZTJMYUtBPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IlhhdmllciIsImZhbWlseV9uYW1lIjoiTSIsImlhdCI6MTc4MDc3MzcyMCwiZXhwIjoxNzgwNzc3MzIwLCJqdGkiOiJmNGRiMzUxZTdhNGMzOTA3NDU5ZTBkODEwMWYzZjcwYjcwYWVlYzdkIn0.sRN-gsy69sJgNqKWUyg0Q-Mafnx_0lTgU46RUkmJBqnNuRhWiZlUrSG7PSkx8qDMiNsTduiLkerpV6xsYfyo8rmxIm6j-fULphnhIEElGMULn_35wcRkrHHlCNmRKHXA1LcqiW6UEP-whp1zKXdedISwDwSQrARzQ4I8MKO32PpgaAfo2F-W_4jCPCcowBl6n95evMZH2hU3h9INP6OSmg9MZXBr9ZiKObO5K0bzQzVVKpl0zlii3QZZFs3okHrDRSGSQarC6C44VErdUlyu0dAZ8InNucO5H8XyMqMfuT2mT3E6xrioq5IW_RdPUkYDKKspXJL191VCAfIRhS_RSw "HTTP/1.1 200 OK"
+timestamp:                          2026-06-06T19:22:07.938178Z
+---
+httpRequest.latency:                0.555169238s
+httpRequest.protocol:               HTTP/1.1
+httpRequest.referer:                https://health-mcp-agent-600671868745.europe-west3.run.app/
+httpRequest.remoteIp:               89.128.228.10
+httpRequest.requestMethod:          POST
+httpRequest.requestSize:            2287
+httpRequest.requestUrl:             https://health-mcp-agent-600671868745.europe-west3.run.app/ask
+httpRequest.responseSize:           155
+httpRequest.serverIp:               34.143.78.2
+httpRequest.status:                 500
+httpRequest.userAgent:              Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36 Edg/148.0.0.0
+insertId:                           6a247360000447946b9eb449
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Frequests
+receiveTimestamp:                   2026-06-06T19:22:08.440689115Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+severity:                           ERROR
+spanId:                             e67c5e6d4913d7a8
+timestamp:                          2026-06-06T19:22:07.723608Z
+trace:                              projects/mcp-personel-health/traces/3bd660e0c1f49e695c92c3c1963b04de
+traceSampled:                       True
+---
+insertId:                           6a2473460001d2b3152bcb67
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:21:42.208845989Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        [2026-06-06 19:21:42 +0000] [3] [INFO] Application startup complete.
+timestamp:                          2026-06-06T19:21:42.119475Z
+---
+insertId:                           6a2473460001d2aa9cafb8dd
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:21:42.208845989Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        [2026-06-06 19:21:42 +0000] [2] [INFO] Application startup complete.
+timestamp:                          2026-06-06T19:21:42.119466Z
+---
+insertId:                           6a2473460001d22f21a04060
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:21:42.208845989Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        StreamableHTTP session manager started
+timestamp:                          2026-06-06T19:21:42.119343Z
+---
+insertId:                           6a2473460001d221c19dc4d1
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:21:42.208845989Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        StreamableHTTP session manager started
+timestamp:                          2026-06-06T19:21:42.119329Z
+---
+insertId:                           6a24734600019e2a2408baad
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:21:42.208845989Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        [2026-06-06 19:21:42 +0000] [3] [INFO] Waiting for application startup.
+timestamp:                          2026-06-06T19:21:42.106026Z
+---
+insertId:                           6a24734600019e210e347d45
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:21:42.208845989Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        [2026-06-06 19:21:42 +0000] [2] [INFO] Waiting for application startup.
+timestamp:                          2026-06-06T19:21:42.106017Z
+---
+insertId:                           6a24734600019deada45d2c3
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:21:42.208845989Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        [2026-06-06 19:21:42 +0000] [3] [INFO] Started server process [3]
+timestamp:                          2026-06-06T19:21:42.105962Z
+---
+insertId:                           6a24734600019ddf81fcdc34
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:21:42.208845989Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        [2026-06-06 19:21:42 +0000] [2] [INFO] Started server process [2]
+timestamp:                          2026-06-06T19:21:42.105951Z
+---
+insertId:                           6a24734400082a87c32fa7b7
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:21:40.871568504Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        "  check_feature_enabled()"
+timestamp:                          2026-06-06T19:21:40.535175Z
+---
+insertId:                           6a24734400082a7ba90d4262
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:21:40.871568504Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        /usr/local/lib/python3.12/site-packages/google/adk/features/_feature_decorator.py:72: UserWarning: [EXPERIMENTAL] feature FeatureName.PLUGGABLE_AUTH is enabled.
+timestamp:                          2026-06-06T19:21:40.535163Z
+---
+insertId:                           6a247344000827e459115be9
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:21:40.538357184Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        "  check_feature_enabled()"
+timestamp:                          2026-06-06T19:21:40.534500Z
+---
+insertId:                           6a247344000827d1fa79d261
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:21:40.538357184Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        /usr/local/lib/python3.12/site-packages/google/adk/features/_feature_decorator.py:72: UserWarning: [EXPERIMENTAL] feature FeatureName.PLUGGABLE_AUTH is enabled.
+timestamp:                          2026-06-06T19:21:40.534481Z
+---
+httpRequest.latency:                11.413767417s
+httpRequest.protocol:               HTTP/1.1
+httpRequest.remoteIp:               89.128.228.10
+httpRequest.requestMethod:          GET
+httpRequest.requestSize:            1069
+httpRequest.requestUrl:             https://health-mcp-agent-600671868745.europe-west3.run.app/
+httpRequest.responseSize:           18144
+httpRequest.serverIp:               34.143.78.2
+httpRequest.status:                 200
+httpRequest.userAgent:              Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36 Edg/148.0.0.0
+insertId:                           6a247346000203126213def9
+labels.instanceId:                  002f8ffd474c954a42de445a8ab35be21109f32a4176a4acfedee0d11ecbbe72d9c582feb94764440c43a2eaea5d42fe2a2dd6f3f1c159fac56653672c5f36c16ac65a7527b15fdaf42193965212ac
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Frequests
+receiveTimestamp:                   2026-06-06T19:21:42.135953071Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00021-48v
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+severity:                           INFO
+spanId:                             af5ea3f8e9a3be1e
+timestamp:                          2026-06-06T19:21:30.710601Z
+trace:                              projects/mcp-personel-health/traces/73cd4f634820d23979930baebb6bcf57
+traceSampled:                       True
+---
+insertId:                           6a24732f000024a1874399d8
+labels.instanceId:                  002f8ffd472c81503d33a225ac7e7388d0a7e28bad49019e6c1860901d5dc77fedf86a8fff5f696536f75c94ab517d31e0f3c22041f5c0119ecc6e53a5a1c13c0e1530acf786d385c6dcf70e08da
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:21:19.048562371Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00020-k7d
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        [2026-06-06 19:21:19 +0000] [1] [INFO] Shutting down: Master
+timestamp:                          2026-06-06T19:21:19.009377Z
+---
+insertId:                           6a24732e000ddd0799decd2a
+labels.instanceId:                  002f8ffd47afcc50106f725395032e03cb4bf9b6e08ec1c53264d4feea7291f895af00adc29e4e0b1cbd094a39e604443ec4e52c158119a945f07a62cabfbe46ead9d6cddcc05c93d8515208fc707c
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:21:19.044774238Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00020-k7d
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        [2026-06-06 19:21:18 +0000] [1] [INFO] Shutting down: Master
+timestamp:                          2026-06-06T19:21:18.908551Z
+---
+insertId:                           6a24732e000ddcf4c0e37f63
+labels.instanceId:                  002f8ffd472c81503d33a225ac7e7388d0a7e28bad49019e6c1860901d5dc77fedf86a8fff5f696536f75c94ab517d31e0f3c22041f5c0119ecc6e53a5a1c13c0e1530acf786d385c6dcf70e08da
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:21:19.048562371Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00020-k7d
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        [2026-06-06 19:21:18 +0000] [1] [INFO] Worker (pid:3) was sent SIGTERM!
+timestamp:                          2026-06-06T19:21:18.908532Z
+---
+insertId:                           6a24732e000ddc4da5ceb5db
+labels.instanceId:                  002f8ffd472c81503d33a225ac7e7388d0a7e28bad49019e6c1860901d5dc77fedf86a8fff5f696536f75c94ab517d31e0f3c22041f5c0119ecc6e53a5a1c13c0e1530acf786d385c6dcf70e08da
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:21:19.048562371Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00020-k7d
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        [2026-06-06 19:21:18 +0000] [1] [INFO] Worker (pid:2) was sent SIGTERM!
+timestamp:                          2026-06-06T19:21:18.908365Z
+---
+insertId:                           6a24732e000d766ded2d2ce0
+labels.instanceId:                  002f8ffd472c81503d33a225ac7e7388d0a7e28bad49019e6c1860901d5dc77fedf86a8fff5f696536f75c94ab517d31e0f3c22041f5c0119ecc6e53a5a1c13c0e1530acf786d385c6dcf70e08da
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:21:19.048562371Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00020-k7d
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        [2026-06-06 19:21:18 +0000] [2] [INFO] Finished server process [2]
+timestamp:                          2026-06-06T19:21:18.882285Z
+---
+insertId:                           6a24732e000d760c9e1e949d
+labels.instanceId:                  002f8ffd472c81503d33a225ac7e7388d0a7e28bad49019e6c1860901d5dc77fedf86a8fff5f696536f75c94ab517d31e0f3c22041f5c0119ecc6e53a5a1c13c0e1530acf786d385c6dcf70e08da
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:21:19.048562371Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00020-k7d
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        [2026-06-06 19:21:18 +0000] [2] [INFO] Application shutdown complete.
+timestamp:                          2026-06-06T19:21:18.882188Z
+---
+insertId:                           6a24732e000d75fa4fce51d1
+labels.instanceId:                  002f8ffd472c81503d33a225ac7e7388d0a7e28bad49019e6c1860901d5dc77fedf86a8fff5f696536f75c94ab517d31e0f3c22041f5c0119ecc6e53a5a1c13c0e1530acf786d385c6dcf70e08da
+logName:                            projects/mcp-personel-health/logs/run.googleapis.com%2Fstderr
+receiveTimestamp:                   2026-06-06T19:21:19.048562371Z
+resource.labels.configuration_name: health-mcp-agent
+resource.labels.location:           europe-west3
+resource.labels.project_id:         mcp-personel-health
+resource.labels.revision_name:      health-mcp-agent-00020-k7d
+resource.labels.service_name:       health-mcp-agent
+resource.type:                      cloud_run_revision
+textPayload:                        [2026-06-06 19:21:18 +0000] [3] [INFO] Finished server process [3]
+timestamp:                          2026-06-06T19:21:18.882170Z

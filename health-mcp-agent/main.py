@@ -28,6 +28,7 @@ async def chat_ui():
 security = HTTPBearer()
 
 USER_MAPPING = {
+    "xaviermorejonbalta@gmail.com": "user_001",
     "<EMAIL_ADDRESS>": "user_001"
 }
 
@@ -52,14 +53,14 @@ async def verify_google_token(
     token = credentials.credentials
     async with httpx.AsyncClient() as client:
         response = await client.get(
-            f"https://oauth2.googleapis.com/tokeninfo?access_token={token}"
+            f"https://oauth2.googleapis.com/tokeninfo?id_token={token}"
         )
 
     if response.status_code != 200:
         raise HTTPException(status_code=401, detail="Invalid or expired token")
 
     data = response.json()
-    if "error" in data or int(data.get("expires_in", 0)) <= 0:
+    if "error" in data:
         raise HTTPException(status_code=401, detail="Invalid or expired token")
 
     email = data.get("email")

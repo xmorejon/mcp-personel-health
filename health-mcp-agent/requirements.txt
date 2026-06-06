@@ -1,4 +1,4 @@
-fastapi
+﻿fastapi
 uvicorn
 gunicorn
 google-auth
@@ -7,3 +7,5 @@ google-adk
 pydantic
 httpx
 mcp
+litellm
+google-cloud-aiplatform
